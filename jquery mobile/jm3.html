@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jm3</title>
+	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+
+	<div data-role="page" id="page1">
+		<div data-role="content">
+			<form action="#" method="post">
+				<label for="username" class="ui-hidden-accessible">用户名：</label>
+				<input type="text" name="" id="username" placeholder="输入你的用户名">
+				<input type="submit" name="" value="点击确认提交">
+			</form>
+
+			<ul data-role="listview" data-inset="true">
+				<li data-role="list-divider">apple</li> 
+				<li>banana</li>
+				<li>orange<a href="#page2">跳转</a></li>
+				<li>grape<span class="ui-li-count">10</span></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div data-role="page" id="page2">
+		<div data-role="content">
+			<div data-role="collapsible">
+				<h1>hello</h1>
+				<ul data-role="listview">
+					<li>number1</li>
+					<li>number2</li>
+					<li></li>
+				</ul>
+
+			</div>
+
+			<!-- <input type="search" name="search" placeholder="点击搜索">
+			<input type="radio" checked>
+ -->
+			<form >
+				<fieldset data-role="control-group">
+				<legend>点击选择星期</legend>
+					<select>
+						<optgroup label="周内">
+							<option>星期一</option>
+							<option>星期二</option>
+						</optgroup>
+					</select>
+				</fieldset>
+				<label for="rrr"></label>
+				<input type="range" name="rrr" id="rrr" value="50" max="100" min="0" step="2" data-highlight="true">
+
+				<select id="switch" data-role="slider" name="switch">
+					<option value="on">On</option>
+					<option value="Off" selected>Off</option>
+				</select>
+				<p>点击我，我会消失</p>
+				<p>点击我，我也会消失</p>
+				<p id="p1">长按一秒我会消失</p>
+				<p id="p2">在我上面滑动试试</p>
+				<p id="p3">朝不同方向滑动试试</p>
+			</form>
+		</div>
+
+
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("p").on("click",function()
+			{
+				$(this).hide();
+			})
+			$("#p1").on("taphold",function()
+			{
+				$(this).hide();
+			})
+			$("#p2").on("swipe",function()
+			{
+				$(this).text("你滑动了");
+			})
+			$("#p3").on("swipeleft",function()
+			{
+				$(this).text("向左滑动了");
+			})
+			$("#p3").on("swiperight",function()
+			{
+				$(this).text("向右滑动了");
+			})
+			$(document).on("scrollstart",function()
+			{
+				alert("开始滚动");
+			})
+			
+		})
+	</script>
+</body>
+</html>

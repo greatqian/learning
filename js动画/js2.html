@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js2</title>
+</head>
+<body>
+<canvas style="width: 200px;height: 100px;border:1px solid black" id="canvas1">
+	you browser cant support the canvas.
+</canvas>
+<canvas style="width: 200px;height: 100px;border: 1px solid black" id="canvas2">
+	666
+</canvas>
+<script type="text/javascript">
+	var canvas=document.getElementById("canvas1");
+	var cxt=canvas.getContext("2d");
+	cxt.moveTo(10,10);
+	cxt.lineTo(150,50);
+	cxt.lineTo(10,50);
+	cxt.stroke();
+</script>
+<script type="text/javascript">
+	var canvas2=document.getElementById("canvas2");
+	var ctx2=canvas2.getContext("2d");
+	var gradient=ctx2.createLinearGradient(10,10,50,0);
+	gradient.addColorStop(0.5,"blue");
+	gradient.addColorStop(1,"red");
+	ctx2.fillStyle=gradient;
+	ctx2.fillRect(0,0,200,100);
+
+</script>
+</body>
+</html>

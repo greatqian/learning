@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js4</title>
+</head>
+<body>
+	<canvas id="canvas" width="500px" height="300px" style="border: 1px solid black">
+		hello
+	</canvas>
+	<button id="but">开始</button>
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas");
+		var ctx=canvas.getContext("2d");
+		var but=document.getElementById("but");
+		var x=500;
+		but.onclick=function(){
+			var timmer=setInterval(function(){
+				
+				var y=0;
+				var h=100;
+				ctx.clearRect(0,0,500,300);
+				ctx.fillStyle="blue";
+				ctx.fillRect(x,y,20,h);
+
+				x=x-10;
+			},70)
+		}
+		var a=[];
+		a.push('a');
+		a.push('b');
+		a.push('');
+		alert(a.length);
+
+	</script>
+</body>
+</html>

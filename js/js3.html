@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js3</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		ul li{
+			width: 200px;
+			height: 100px;
+			background: yellow;
+			margin-bottom: 20px;
+			opacity: 0.7;
+			border:4px solid #000;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var aLi=document.getElementsByTagName("li");
+			for(var i=0;i<aLi.length;i++){
+				// aLi[i].timmer=null;
+				aLi[i].onmouseover=function(){
+					startMove(this,400);
+				}
+				aLi[i].onmouseout=function(){
+					startMove(this,200);
+				}
+			}
+		}
+		// var timmer=null;
+		function startMove(obj,iTarget){
+			clearInterval(obj.timmer);
+			obj.timmer=setInterval(function(){
+				var cw=parseInt(getStyle(obj,"width"));
+				var speed=(iTarget-cw)/8;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if(cw==iTarget){
+					clearInterval(obj.timmer);
+				}
+				else{
+					obj.style.width=parseInt(getStyle(obj,"width"))+speed+"px";
+					obj.style.fontSize=parseInt(getStyle(obj,"fontSize"))+speed+"px";
+				}
+			},30)
+
+		}
+
+		function getStyle(obj,attr){
+			return getComputedStyle(obj,false)[attr];
+		}
+	</script>
+</head>
+<body>
+<ul>
+	<li>666</li>
+	<li></li>
+	<li></li>
+</ul>
+</body>
+</html>

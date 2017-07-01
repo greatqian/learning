@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js动画1</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		#div1{
+			width: 200px;
+			height: 200px;
+			background: gray;
+			position: relative;
+			left: -200px;
+			top: 50px;
+			text-align: center;
+		}
+		#div1 span{
+			width: 20px;
+			height: 50px;
+			background: blue;
+			position: absolute;
+			left: 200px;
+			top: 70px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oDiv=document.getElementById("div1");
+			oDiv.onmouseover=function(){
+				startMove(0);
+			}
+			oDiv.onmouseout=function(){
+				startMove(-200);
+			}
+		}
+		var timmer=null;
+
+		function startMove(iTarget){
+			clearInterval(timmer);
+			var oDiv=document.getElementById("div1");
+			timmer=setInterval(function(){
+				var speed=(iTarget-oDiv.offsetLeft)/8;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if(oDiv.offsetLeft==iTarget){
+					clearInterval(timmer);
+				}
+				else{
+					oDiv.style.left=oDiv.offsetLeft+speed+'px';
+				}
+
+			},30);
+		}
+
+		// function startMove1(){
+		// 	clearInterval(timmer);
+		// 	var oDiv=document.getElementById("div1");
+		// 	timmer=setInterval(function(){
+		// 		if(oDiv.offsetLeft<=-300){
+		// 			clearInterval(timmer);
+		// 		}
+		// 		else{
+		// 			oDiv.style.left=oDiv.offsetLeft-30+'px';
+		// 		}
+
+		// 	},30);
+		// }
+
+	</script>
+</head>
+<body>
+	<div id="div1">	
+	loading...
+	<span id="share">分享</span> </div>
+</body>
+</html>

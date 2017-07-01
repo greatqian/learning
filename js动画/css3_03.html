@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css3</title>
+</head>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+		color: #ffffff;
+		font-size: 20px;
+		font-family:"微软雅黑"
+	}
+	body {
+		background: #00a0fc;
+		overflow: hidden;
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function()
+	{
+		var PageX = window.screen.width,
+			PageY = window.screen.height,
+			balls = [];
+
+		function ball(x,y,size)
+		{
+			this.node=document.createElement("div");
+			this.x=x;
+			this.y=y;
+			this.size=size;
+
+			this.createBall=function()
+			{
+				this.node.style.position = "absolute";
+				this.node.style.top = this.y+'px';
+				this.node.style.left = this.x+'px';
+				this.node.innerHTML = "o";
+				this.node.style.fontSize = size+'px';
+				document.body.appendChild(this.node);
+			};
+
+			this.createBall();
+			this.ballMove=function()
+			{
+				this.node.style.top = parseInt(this.node.style.top)+1+'px';
+				this.node.style.left = parseInt(this.node.style.left)+0.02+'px';
+			};
+		}
+
+		function createBall()
+		{
+			balls.push(new ball(Math.random()*PageX,-50,10+Math.random()*20));
+		}
+
+		setInterval(createBall,1000);
+
+		function ballMove()
+		{
+			var j;
+			for(j=0;j<balls.length;j++)
+			{
+				balls[j].ballMove();
+				if(parseInt(balls[j].node.style.top)>PageY||parseInt(balls[j].node.style.left)>PageX)
+				{
+					balls[j].node.parentNode.removeChild(balls[j].node);
+					balls.splice(j,1);
+				}
+			}
+		}
+
+		setInterval(ballMove,10);
+	}
+</script>
+<body>
+</body>
+</html>

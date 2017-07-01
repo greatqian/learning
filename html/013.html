@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>012</title>
+	<style type="text/css">
+		#main{
+			width: 200px;
+			height: 100px;
+			background: yellow;
+			text-align: center;
+			line-height: 100px;
+		}
+	</style>
+	<!-- <script type="text/javascript">
+		window.onload=function(){
+			var main=document.getElementById("main");
+			var s1=document.getElementById("s1");
+			var bt2=document.getElementById("bt2");
+			function close(){
+				main.style.display="none";
+			}
+			function open(){
+				main.style.display="block";
+			}
+			bt2.addEventListener('click',open,false);
+			s1.addEventListener('click',close,false);
+		}
+	</script> -->
+	<script type="text/javascript">
+	// window.onload=function(){
+	// 	var bt2=document.getElementById("bt2");
+	// 	function close(){
+	// 		alert("are you sure?");
+	// 	}
+	// 	bt2.onclick=close;
+	// }
+		function showMessage(){
+			alert("hello");
+		}
+		
+	</script>
+</head>
+<body>
+	<input type="button" id="bt2" value="点击打开" onclick="showMessage()">
+</body>
+</html>

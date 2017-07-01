@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>div显示与隐藏</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#main{
+			width: 200px;
+			height: 100px;
+			background-color: yellow;
+		}
+		#span{
+			color: blue;
+		}
+	</style>
+	<script type="text/javascript">
+		var main=document.getElementById("main");
+		var close=document.getElementById("close");
+		var open=document.getElementById("open");
+
+		
+		
+		close.onclick=function(){
+			alert("hello");
+		open.onclick=function(){
+			alert("hello");
+		}
+		/*open.addEventListener('click',toOpen(),false);
+		close.addEventListener('click',toClose(),false);*/
+	</script>
+</head>
+<body>
+<input type="button" name="" id="open" value="点击">
+<div id="main">
+	<input type="button" name="" id="close" value="点击">
+</div>
+</body>
+</html>

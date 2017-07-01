@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>divs</title>
+</head>
+<style type="text/css">
+	.childDiv{
+		width: 100%;
+		height: 200px;
+		background: blue;
+	}
+</style>
+<body>
+<div class="bigDiv" id="bigDiv">
+	<div class="childDiv" id="childDiv">
+		hello world
+	</div>
+	
+</div>
+<br>
+<script type="text/javascript">
+	alert(document.body.firstChild.innerHTML);
+</script>
+<button id="addDiv" onclick="createDiv()">点击加载div</button>
+<button id="removeDiv" onclick="removeDiv()">点击删除</button>
+<button id="show" onclick="showClass()">显示属性</button>
+<input type="text" name="" placeholder="请在此输入文字" id="inputArea" onblur="showText(this)">
+</body>
+<script type="text/javascript">
+	 function createDiv()
+	 {
+	 	var newDIv=document.createElement("div");
+	 	newDIv.setAttribute("class","childDiv");
+	 	newDIv.setAttribute("onclick","this.innerHTML='changed..'");
+	 	newDIv.setAttribute("onmouseover","this.innerHTML='mouse is on it..'");
+	 	newDIv.setAttribute("onmouseout","this.innerHTML='hello world'");
+	 	// newDIv.setAttribute("onclick","this.innerHTML=Date()");
+	 	newDIv.innerHTML="hello world";
+	 	// newDIv.setAttribute("style","background:red");
+	 	newDIv.style.background="yellow";
+	 	var bigDiv=document.getElementById("bigDiv");
+	 	// var addDiv=document.getElementById("emptyDiv");
+	 	// bigDiv.insertBefore(newDIv,emptyDiv);
+	 	bigDiv.appendChild(newDIv);
+
+	 }
+	 function removeDiv()
+	 {
+	 	var bigDiv=document.getElementById("bigDiv");
+	 	bigDiv.removeChild(bigDiv.firstChild);
+	 }
+
+	 function showClass()
+	 {
+	 	var childDiv=document.getElementById("childDiv");
+	 	var attr=childDiv.getAttribute("class");
+	 	alert("class:"+attr);
+	 }
+	 function checkEnabled()
+	 {
+	 	if(navigator.cookieEnabled)
+	 	{
+	 		alert("cookieEnabled");
+	 	}else
+	 	{
+	 		alert("cookie not enabled");
+	 	}
+	 }
+	 function showText(obj)
+	 {
+	 	var text=obj.value.toUpperCase();
+	 	obj.value=text;
+	 }
+</script>
+</html>

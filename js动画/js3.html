@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<canvas id="canvas2" width="200px" height="100px" style="border:1px solid black;">
+	your can't support
+</canvas>
+
+<dl>
+	<dt>计算机科学</dt>
+	<dd>编译原理</dd>
+	<dt>计算机原理</dt>
+	<dd>计算机网络</dd>
+</dl>
+
+
+<script type="text/javascript">
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+var my_gradient=ctx.createLinearGradient(0,0,0,150);
+my_gradient.addColorStop(0,"black");
+my_gradient.addColorStop(1,"white");
+ctx.fillStyle=my_gradient;
+ctx.fillRect(0,0,150,150);
+</script>
+
+<script type="text/javascript">
+	var canvas2=document.getElementById("canvas2");
+	var ctx2=canvas2.getContext("2d");
+	
+	ctx2.beginPath();
+	ctx2.fillStyle = "rgb(0,0,0)";
+	ctx2.arc(30 , 30 , 10 , 0 , 2.0*Math.PI );
+	ctx2.fill();
+	// ctx2.closePath();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test01</title>
+	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<body>
+	<input type="button" name="btn1" value="按钮" id="btn1">
+	<input type="button" name="btn2" value="按钮二" id="btn2">
+	<p id="p1">hello world</p>
+	<button id="btn3" onclick="able()">按钮1</button>
+	<button id="btn4" onclick="show1()">按钮2</button>
+	<select id="words1" onchange="show2()" >
+		<option>a</option>
+		<option selected="selected">b</option>
+		<option>c</option>
+	</select>
+	<input type="text" name="" id="input1" readonly="readonly" value="hello">
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		// var cantClick=function()
+		// {
+		// 	var mybtn=$("#btn1");
+		// 	mybtn.button("option","disable","true");
+		// }
+
+		$("#btn2").on("cilck",function()
+		{
+			// cantClick();
+			var mybtn=$("#btn1");
+			mybtn.button("option","disable","true");
+			$.mobile.loading("show");
+		})
+
+		// $("#p1").hide();
+
+		$("#btn1").on("click",function()
+		{
+			showEvent();
+		})
+
+		var showEvent=function()
+		{
+			// if($("#p1").hide())
+			// {
+			// 	$("#p1").show(); 
+			// }else
+			// {
+			// 	$("#p1").hide();
+			// }
+			$.mobile.loading("show");
+			// $("#p1").hide();
+		}
+
+		$("#words option").on("click",function()
+		{
+			alert("hello");
+		})
+	})
+
+	function show2(e)
+	{
+		e=window.event;
+		var target=e.target;
+		alert(target.value);
+	}
+
+	function show1()
+	{
+		$("#words1").attr("disabled","disabled");
+		alert("worked");
+	}
+
+	function able()
+	{
+		// $("#words").removeAttr("disabled");
+		// $("#input1").val("hello world");
+		$("#input1").removeAttr("readonly");
+		// $("#input1").attr("readonly","");
+		alert("worked");
+	}
+</script>
+</html>

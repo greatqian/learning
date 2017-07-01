@@ -1,0 +1,91 @@
+body{
+	margin-right: 0;
+	margin-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	background: #ABB2B9;
+}
+table{
+	width: 100%;
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+table th{
+	width: 33%;
+	text-align: left;
+	border: 1px solid gray;
+	background: #212F3C;
+	color: white;
+}
+table td{
+	border: 1px solid gray;
+}
+
+
+
+.firstTable{
+	width: 100%;
+	background: #1C2833;
+}
+.firstTable a{
+	color: #EAEDED;
+	margin-right: 10px;
+}
+.theme{
+	color: gray;
+}
+.author{
+	color: gray;
+	font-size: 14px;
+}
+.lastTable{
+	background: #566573;
+	height: 80px;
+	width: 100%;
+	text-align: center;
+}
+.lastTable a{
+	display: inline-block;
+	margin-right: 20px; 
+	color: #ECF0F1;
+}
+.content{
+	border-top: 1px solid #EAECEE;
+	border-left: 1px solid #EAECEE;
+	border-right: 3px solid #566573;
+	border-bottom: 3px solid #566573;
+	margin-top: 30px;
+	margin-right: 20px;
+	margin-left: 20px;
+	padding: 30px;
+	padding-top: 30px;
+	background: #EAECEE;
+
+}
+.paragraph{
+	text-indent: 2em;
+	line-height: 1.8em;
+}
+.experience{
+	margin-left: 40px;
+	font-size: 16px;
+	line-height: 2em;
+}
+.userMessage{
+	display: inline-block;
+	width: 450px;
+	text-align: right;
+	margin-right: 20px;
+}
+.subButton{
+	display: block;
+	width: 100%;
+	background: #2874A6;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

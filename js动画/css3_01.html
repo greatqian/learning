@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css3</title>
+</head>
+<style type="text/css">
+div{
+	width: 100px;
+	height: 100px;
+	background: green;
+	position: relative;
+	animation: hello 5s infinite;
+}
+
+@keyframes hello{
+	0%	{background: green;left: 0px;top: 0px;}
+	25%	{background: red;left: 200px;top: 0px;}
+	50% {background: blue;left: 200px;top: 200px;}
+	75% {background: purple;left: 0px;top: 200px;}
+	100% {background: green;left: 0px;top: 0px;}
+}
+</style>
+<body>
+<div>
+	
+</div>
+<script type="text/javascript">
+	var arr=new Array(6);
+	arr[0]="a";
+	arr[1]="b";
+	arr[2]="c";
+	arr[3]="d";
+	arr[4]="e";
+	arr[5]="f";
+	document.write(arr+"<br>");
+	document.write("<h2>hello world</h2>");
+</script>
+</body>
+</html>

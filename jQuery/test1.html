@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="3.png">
+	<title>t1</title>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".main").css("color","red");
+		});
+	</script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var mains=document.getElementsByTagName("*");
+			for(var i=0;i<mains.length;i++){
+				mains[i].style.color="blue";
+			}
+		}
+	</script>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.stack_deco{
+			margin-left: 200px;
+			margin-top: 200px;
+			width: 300px;
+			height: 200px;
+/*			opacity: 100;*/
+			background: gray; 
+			transform: rotate(10edg);
+			border: 1px solid black;
+			box-shadow: 10px 10px 10px gray;
+			color: white;
+			text-align: center;
+			line-height: 200px;
+			font-size: 20px;
+			font-weight: 700;
+			transition: width 2s ease,height 2s ease,font-size 2s ease,line-height 2s ease,transform 2s ease;
+		}
+		.stack_deco:hover{
+			width:500px;
+			height: 400px;
+			font-size: 30px;
+			line-height: 400px;
+			transform: rotate(360deg);
+		}
+		input{
+			margin-top: 100px;
+			margin-left: 400px;
+			width: 200px;
+			/*background:blue;*/
+			color: white;
+			/*transform: scaleX(1.0);*/
+			transition: transform 2s ease;
+		}
+		input:hover{
+			transform:scaleZ(2.0);
+			
+		}
+	</style>
+</head>
+<body>
+<div class="stack_deco">534666</div>
+<input type="button" name="" value="鼠标放上来">
+</body>
+</html>

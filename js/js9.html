@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js9</title>
+	<script type="text/javascript">
+		// var json={a:12,b:13};
+		// for(var i in json){
+		// 	alert(json[i]);
+		// }
+
+		startShow(1,function(){
+			alert("方法运行了");
+		});
+		startShow(2,5);
+
+		function startShow(i,f){
+			if(i==1){
+				f();
+			}else if(i==2){
+				alert("f的值为："+f);
+			}
+		}
+
+	</script>
+</head>
+<body>
+<div>666</div>
+</body>
+</html>

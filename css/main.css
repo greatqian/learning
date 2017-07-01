@@ -1,0 +1,106 @@
+#students tr th{
+	background: #283747;
+	border: 1px solid #7B7D7D;
+	text-align: center;
+	color: white;
+}
+#students tr td{
+	border: 1px solid #979A9A;
+	text-align: center;
+}
+
+body{
+	margin-top:0;
+	margin-right: 0;
+	margin-left: 0;
+	background:#D5D8DC  ;
+	font-family: "verdana";
+}
+span{
+color: blue;
+}
+a{color: purple!important;}
+a{color: green;}
+a{color:blue;}
+a:hover{
+	font-size: 30px;
+}
+.fdiv{
+	background: #FDFEFE ;
+	margin-right: 40px;
+	margin-left: 40px;
+	border: 2px solid #76D7C4;
+}
+.sdiv{
+	margin-top: 40px;
+	margin-right: 30px;
+	margin-left: 30px;
+	margin-bottom: 40px;
+}
+
+p{
+	text-indent: 2em;
+	font-size:17px;/*设置文字大小为20px*/
+}
+.index{
+	background: #FDFEFE ;
+	margin: 0;
+	padding: 0;
+}
+.index li{
+	margin-right: 20px;
+}
+#ul1{
+	border: 2px dotted red;
+}
+.word{
+	color: pink;
+}
+#setColor{
+	color: yellow;
+}
+.div1>ol{
+	border:4px solid #ccc;
+}
+#question{
+	font-style: italic;
+	text-decoration: underline;
+}
+.oldWord{
+	text-decoration: line-through;
+}
+.longWord{
+	line-height: 2em;
+	font-family: "verdana";
+}
+.quote{
+	font-size: 20px;
+	letter-spacing:20px;
+	color: black;
+}
+#nicePicture{
+	text-align:center;
+}
+#staticDiv{
+	border: 5px solid #ccc;
+	width: 200px;
+	height: 200px;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+#centerDiv{
+	margin-right:auto;
+	margin-left: auto;
+}
+#container{
+	text-align: center;
+}
+#container ul{
+	display: inline;
+}
+#container li{
+	font-size: 20px;
+	display: inline;
+	margin-right: 30px;
+}

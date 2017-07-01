@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js5</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 300px;
+			height: 300px;
+			background: red;
+			opacity: 0.3;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			// var aLi=document.getElementsByTagName("li");
+			// for(var i=0;i<aLi.length;i++){
+			// 	// aLi[i].timmer=null;
+			// 	aLi[i].onmouseover=function(){
+			// 		startMove(this,400);
+			// 	}
+			// 	aLi[i].onmouseout=function(){
+			// 		startMove(this,200);
+			// 	}
+			// }
+
+			// var Li1=document.getElementById("li1");
+			// var Li2=document.getElementById("li2");
+			// Li1.onmouseover=function(){
+			// 	startMove(this,"height",400);
+			// }
+			// Li1.onmouseout=function(){
+			// 	startMove(this,"height",100);
+			// }
+			// Li2.onmouseover=function(){
+			// 	startMove(this,"width",400);
+			// }
+			// Li2.onmouseout=function(){
+			// 	startMove(this,"width",200);
+			// }
+
+			var oDiv=document.getElementById("div1");
+			oDiv.onmouseover=function(){
+				startMove(this,"opacity",100);
+			}
+			oDiv.onmouseout=function(){
+				startMove(this,"opacity",30);
+			}
+
+		}
+		// var timmer=null;
+		function startMove(obj,attr,iTarget){
+			clearInterval(obj.timmer);
+			obj.timmer=setInterval(function(){
+				if(attr=="opacity"){
+					var cw=parseFloat(getStyle(obj,attr))*100;
+					// cw=cw*100;
+				}else{
+					var cw=parseInt(getStyle(obj,attr));
+				}
+				
+				var speed=(iTarget-cw)/8;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if(cw==iTarget){
+					clearInterval(obj.timmer);
+				}
+				else{
+					if(attr=="opacity"){
+						obj.style[attr]=(cw+speed)/100;
+					}else{
+						obj.style[attr]=parseInt(getStyle(obj,attr))+speed+"px";
+					}
+					
+				}
+			},30)
+
+		}
+
+		// function startMove1(obj,iTarget){
+		// 	clearInterval(obj.timmer);
+		// 	obj.timmer=setInterval(function(){
+		// 		var cw=parseInt(getStyle(obj,"width"));
+		// 		var speed=(iTarget-cw)/8;
+		// 		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		// 		if(cw==iTarget){
+		// 			clearInterval(obj.timmer);
+		// 		}
+		// 		else{
+		// 			obj.style.width=parseInt(getStyle(obj,"width"))+speed+"px";
+		// 		}
+		// 	},30)
+
+		// }
+
+		function getStyle(obj,attr){
+			return getComputedStyle(obj,false)[attr];
+		}
+	</script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
